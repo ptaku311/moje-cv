@@ -1,0 +1,295 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Future Imperfect by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    color: #666;
+}
+
+#intro {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(255, 255, 255, 0.342)
+    );
+    margin-bottom: 20px;
+}
+
+#main {
+    flex: 1;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info {
+    order: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.post {
+    order: 3;
+}
+
+.below-article-images {
+    display: flex;
+    gap: 0px;
+    /*margin-top: 20px;*/
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    /*border: 1px solid #dadada;*/
+    order: 4;
+}
+
+.below-article-images img {
+    width: 100%; /* Zwiększ rozmiar obrazów */
+    max-width: 500px; /* Dodaj max-width, aby kontrolować maksymalny rozmiar */
+    height: 204px;
+    border: 1px solid #ffffff;
+    transition: all 0.4s ease;
+    transform-origin: center;
+    position: relative;
+    z-index: 1;
+}
+
+.below-article-images img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.image-with-caption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.image-with-caption video {
+    width: 363px; /* Zmniejsz szerokość wideo */
+    height: 204px;
+    border: 1px solid #ffffff;
+    transition: all 0.4s ease;
+    transform-origin: center;
+}
+
+.image-with-caption video:hover {
+    transform: scale(2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.image-caption {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #666;
+    text-align: left;
+    max-width: 800px;
+    width: 100%;
+    order: 1;
+    margin-top: 10px;
+    flex-basis: 100%;
+}
+
+.blur-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0px);
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+@media (max-width: 768px) {
+    .image-with-caption {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-with-caption video,
+    .image-with-caption img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .image-with-caption img:hover {
+        transform: scale(1.03);
+    }
+}
+
+body {
+    background-color: #f0f0f0;
+    background-image: 
+        linear-gradient(
+            to bottom,
+            rgba(228, 227, 247, 0.7),
+            rgba(0, 0, 0, 0.87)
+        ),
+        url('images/tlo.jpg')
+}
+    </style>
+</head>
+
+<body class="is-preload">
+    <div class="blur-effect"></div>
+
+    <div id="wrapper">
+        <div id="main">
+            <section id="intro" class="contact-info">
+                <header>
+                    <h2>Paweł Wróbel</h2>
+                    <p style="margin-left: 20px;">
+                        <b> Telefon </b><br />
+                        <b>504 666 518</b> <br />
+                        <b> E-mail </b><br />
+                        <b> xptakux@gmail.com </b> <br />
+                        <b> Data urodzenia </b><br />
+                        <b>18.12.2001</b>
+                    </p>
+                </header>
+            </section>
+            <article class="post">
+                <header>
+                    <div class="title">
+                        <h2><a>Doświadczenie Zawodowe</a></h2>
+                        <p style="text-transform: none; font-size: medium;">Video editor, 5 lat doświadczenia</p>
+
+                        <h2><a>Wykształcenie</a></h2>
+                        <p style="text-transform: none; font-size: medium;">
+                            2,5 lata technikum na wydziale technik informatyk. Zespół Szkół w Sokołowie Małopolskim
+                        </p>
+
+                        <h2><a>Umiejętności</a></h2>
+                        <p style="text-transform: none; font-size: medium;">▪Spostrzegawczość</p>
+                        <p style="text-transform: none; font-size: medium;">▪Dobra umiejętność posługiwania się programem DaVinci Resolve</p>
+                        <p style="text-transform: none; font-size: medium;">▪Tworzenia grafik rastrowych/wektorowych</p>
+                        <p style="text-transform: none; font-size: medium;">▪Posługiwanie się językiem angielskim na poziomie podstawowym</p>
+                    </div>
+                </header>
+            </article>
+
+            <div class="below-article-images" >
+                <div class="image-with-caption" style="margin-top: 50px" >
+                    <video loop muted autoplay onmouseenter="this.play(); this.style.transform = 'scale(2)';"
+                        onmouseleave="this.style.transform = 'scale(1)';">
+                        <source src="video/serce2.mp4" type="video/mp4" />
+                        Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                    </video>
+                    <img src="images/1.jpg" alt="" class="image-hover" />
+                </div>
+
+                
+                <div class="image-with-caption">
+                    <p class="image-caption" style="align-self: right;">
+                        Animacja powstała za pomocą transformowanego prostokąta, który rozmywa obraz. Równocześnie tworzony jest system
+                        cząteczek, na który narzucone są turbulencje by emitował on iskry. Wszystkie elementy łączą się w całość i
+                        tworzą unikatową animację o kształcie serca.
+                    </p>
+                </div>
+            </div>
+
+            <div class="below-article-images" >
+                <div class="image-with-caption">
+                    <video loop muted autoplay onmouseenter="this.play(); this.style.transform = 'scale(2)';"
+                        onmouseleave="this.style.transform = 'scale(1)';">
+                        <source src="video/ogien.mp4" type="video/mp4" />
+                        Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                    </video>
+                    <img src="images/2.jpg" alt="" class="image-hover" />
+                    
+                </div>
+                <div class="image-with-caption">
+                    <p class="image-caption">
+                        Jest to animacja proceduralna za pomocą generowania i modyfikowana losowych liczb, które tworzą imitacje ognia.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="below-article-images" >
+                <div class="image-with-caption">
+                    <video loop muted autoplay onmouseenter="this.play(); this.style.transform = 'scale(2)';"
+                        onmouseleave="this.style.transform = 'scale(1)';">
+                        <source src="video/bleed2.mp4" type="video/mp4" />
+                        Twoja przeglądarka nie obsługuje odtwarzania wideo.
+                    </video>
+                    <img src="images/4.jpg" alt="" class="image-hover" />
+                    
+                </div>
+                <div class="image-with-caption">
+                <p class="image-caption" style="align-content: center;">
+                        Ta animacja skupia się na dynamicznym wyświetlaniu tekstu z użyciem różnorodnych efektów, transformacji i manipulacji kolorami.
+                </p>
+            </div>  
+        </div>
+    </div>
+</div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const videos = document.querySelectorAll(".image-with-caption video");
+            const images = document.querySelectorAll(".image-with-caption img");
+            const blurEffect = document.querySelector(".blur-effect");
+
+            const handleBlur = (element) => {
+                blurEffect.style.opacity = 1;
+                blurEffect.style.backdropFilter = "blur(5px)";
+
+                element.addEventListener("mouseleave", () => {
+                    blurEffect.style.opacity = 0;
+                    blurEffect.style.backdropFilter = "blur(0px)";
+                });
+            };
+
+            videos.forEach((video) => {
+                video.addEventListener("mouseenter", function () {
+                    this.play();
+                    this.style.transform = "scale(1.05)";
+                    handleBlur(this);
+                });
+
+                video.addEventListener("mouseleave", function () {
+                    this.style.transform = "scale(1)";
+                });
+            });
+
+            images.forEach((image) => {
+                image.addEventListener("mouseenter", function () {
+                    this.style.transform = "scale(1.2)";
+                    handleBlur(this);
+                });
+
+                image.addEventListener("mouseleave", function () {
+                    this.style.transform = "scale(1)";
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
